@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GuideAPI.Application\GuideAPI.Application.csproj" />
+    <ProjectReference Include="..\GuideAPI.Domain\GuideAPI.Domain.csproj" />
+    <ProjectReference Include="..\GuideAPI.Infra.Data\GuideAPI.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

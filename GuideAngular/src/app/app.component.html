@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Guide Test</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item dropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+      </li>
+    </ul>
+  </div>
+</nav>
+<br />
+
+<form novalidate [formGroup]="cadastroForm">
+  <div class="form-group col-sm-3" style="margin-left: 1%;">
+    <label for="">Quantidade de Autores</label>
+    <input type="number" class="form-control" id="txtQntAutor" formControlName="qntAutor">
+    <small id="emailHelp" class="form-text text-muted">Digite a quantidade de autores a serem adicionados.</small>
+
+    <button class="btn btn-primary" (click)="adicionarQuantidade()" id="btnSalvar" type="button">Adicionar
+      Autores</button>
+  </div>
+
+  <br />
+
+  <div *ngFor="let item of autores.controls; let i = index" class="form-group col-sm-3" style="margin-left: 1%;">
+    <div [formGroup]="item">
+      <input type="text" class="form-control" formControlName="nome">
+      <small id="emailHelp" class="form-text text-muted">Digite o nome do autor.</small>
+    </div>
+  </div>
+  <button class="btn btn-success" (click)="adicionarAutor()" id="btnEnviar" style="margin-left: 1.7%"
+    type="button">Salvar</button>
+</form>
+
+<br />
+
+<div *ngFor="let item of lstAutores" style="margin-left: 1.7%;">
+  {{ item.nome }}
+</div>
